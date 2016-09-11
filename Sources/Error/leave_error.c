@@ -6,13 +6,13 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/05 04:42:46 by ahamouda          #+#    #+#             */
-/*   Updated: 2016/09/09 15:37:53 by ahamouda         ###   ########.fr       */
+/*   Updated: 2016/09/11 18:41:02 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void	leave_error(char *str)
+int	leave_error(char *str)
 {
 	write(2, str, ft_strlen(str));
 	exit(-1);

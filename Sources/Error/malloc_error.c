@@ -6,15 +6,13 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/09 09:50:55 by ahamouda          #+#    #+#             */
-/*   Updated: 2016/09/09 15:51:39 by ahamouda         ###   ########.fr       */
+/*   Updated: 2016/09/11 18:34:22 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-
-
-void	malloc_error(const char *file, int line, const char *function)
+int	malloc_error(const char *file, int line, const char *function)
 {
 	write(2, "Malloc Error in : ", 18);
 	write(2, file, ft_strlen(file));

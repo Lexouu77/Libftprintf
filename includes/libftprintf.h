@@ -6,7 +6,7 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/09 06:48:29 by ahamouda          #+#    #+#             */
-/*   Updated: 2016/09/09 15:51:10 by ahamouda         ###   ########.fr       */
+/*   Updated: 2016/09/11 18:33:55 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,14 +83,7 @@
 # define MALLOC_ERROR malloc_error(__FILE__, __LINE__, __FUNCTION__)
 
 /*
-** SWAP FUNCTIONS
-*/
-
-void	*byte_swap(void *toswap, size_t size);
-
-
-/*
-** ARRAY_NUMERIC CONVERSIONS FUNCTIONS
+** STD_LIB CONVERSIONS FUNCTIONS
 */
 
 int		ft_atoi(const char *str);
@@ -101,9 +94,9 @@ char	*ft_itoa(int n);
 ** MEMORY FUNCTIONS
 */
 
+void	*byte_swap(void *toswap, size_t size);
 void	ft_bzero(void *s, size_t n);
-void	*ft_memalloc(size_t size)
-	__attribute__ ((malloc));
+void	*ft_memalloc(size_t size);
 void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
@@ -113,22 +106,17 @@ void	*ft_memset(void *s, int c, size_t n);
 ** STRING FUNCTIONS
 */
 
-int		ft_strcmp(const char *s1, const char *s2)
-	__attribute__ ((pure));
+int		ft_strcmp(const char *s1, const char *s2);
 char	*ft_strcpy(char *dest, const char *src);
-char	*ft_strdup(const char *s)
-	__attribute__ ((malloc));
-size_t	ft_strlen(const char *s)
-	__attribute__ ((pure));
+char	*ft_strdup(const char *s);
+size_t	ft_strlen(const char *s);
 
 /*
 ** ERROR FUNCTIONS
 */
 
-void	leave_error(char *str)
-	__attribute__((noreturn));
-void	malloc_error(const char *file, int line, const char *function)
-	__attribute__((noreturn));
+int	leave_error(char *str);
+int	malloc_error(const char *file, int line, const char *function);
 
 /*
 ** MATHS FUNCTIONS

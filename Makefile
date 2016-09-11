@@ -6,7 +6,7 @@
 #    By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/02/27 01:48:43 by ahamouda          #+#    #+#              #
-#    Updated: 2016/09/09 15:55:24 by ahamouda         ###   ########.fr        #
+#    Updated: 2016/09/11 18:41:00 by ahamouda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,51 +32,84 @@ DFLAGS = -g3 -fsanitize=address
 
 HEADER_PATH = ./includes
 
-HEADER = libftprintf.h
+HEADER_FILE = libftprintf.h
 
-HEADERS = $(HEADER:%.h=$(HEADER_PATH)/%.h)
+HEADER = $(HEADER_FILE:%.h=$(HEADER_PATH)/%.h)
 
 LIB = ./libftprintf/libftprintf.a
 
 ## Objects/Sources.
 
-OBJ = $(SRC:.c=.o)
 
-SRC = byte_swap.c\
-	  fctrl.c\
-	  ft_atoi.c\
-	  ft_bzero.c\
-	  ft_itoa.c\
-	  ft_memalloc.c\
-	  ft_memchr.c\
-	  ft_memcpy.c\
-	  ft_memmove.c\
-	  ft_memset.c\
-	  ft_putendl.c\
-	  ft_putstr.c\
-	  ft_strcmp.c\
-	  ft_strcpy.c\
-	  ft_strdup.c\
-	  leave_error.c\
-	  malloc_error.c
+OBJ_PATH = Objects
+OBJECTS = $(addprefix $(OBJ_PATH)/, $(SOURCES:%.c=%.o))
 
-SRC_PATH =
+SRC_PATH = Sources
+SRC_SUBDIR += Error
+SRC_SUBDIR += Maths
+SRC_SUBDIR += Memory
+SRC_SUBDIR += Std_lib
+SRC_SUBDIR += String
+SRC_SUBDIR += Write
 
-NORMINETTE_TEST := $(shell norminette $(SRC) $(HEADERS) | grep -B 1 Error)
+vpath %.c $(addprefix $(SRC_PATH)/,$(SRC_SUBDIR))
+
+# STD_LIB
+
+SRC += ft_atoi.c
+SRC += ft_itoa.c
+
+# MEMORY
+
+SRC += byte_swap.c
+SRC += ft_bzero.c
+SRC += ft_memalloc.c
+SRC += ft_memchr.c
+SRC += ft_memcpy.c
+SRC += ft_memmove.c
+SRC += ft_memset.c
+
+# STRING
+
+SRC += ft_strcmp.c
+SRC += ft_strcpy.c
+SRC += ft_strdup.c
+SRC += ft_strlen.c
+
+# ERROR
+
+SRC += leave_error.c
+SRC += malloc_error.c
+
+# MATHS
+
+SRC += fctrl.c
+
+# WRITE
+
+SRC += ft_putendl.c
+SRC += ft_putstr.c
+
+NORMINETTE_TEST := $(shell norminette $(SRC) $(HEADER) | grep -B 1 Error)
 
 #.SILENT:
 
 all : $(NAME)
 
-$(NAME) : $(OBJ) $(HEADERS)
-	ar rc $(NAME) $(OBJ)
+$(NAME) : $(OBJECTS) $(HEADER)
+	ar rc $(NAME) $(OBJECTS)
 	ranlib $(NAME)
 
-%.o: %.c
+$(OBJECTS): $(HEADERS) | $(OBJ_PATH)
+
+$(OBJECTS): $(OBJ_PATH)/%.o: %.c
 	$(CC) -o $@ -c $< $(CFLAGS) $(SFLAGS) -I $(HEADER_PATH)
 
+$(OBJ_PATH):
+	@-mkdir -p $@
+
 clean:
-	$(RM) $(OBJ)
+	$(RM) -r $(OBJ_PATH)
 
 fclean: clean
 	$(RM) $(NAME)
