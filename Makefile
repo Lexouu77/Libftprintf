@@ -6,7 +6,7 @@
 #    By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/02/27 01:48:43 by ahamouda          #+#    #+#              #
-#    Updated: 2016/09/11 18:41:00 by ahamouda         ###   ########.fr        #
+#    Updated: 2016/09/12 15:08:34 by ahamouda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,7 @@ DFLAGS = -g3 -fsanitize=address
 HEADER_PATH = ./includes
 
 HEADER_FILE = libftprintf.h
+HEADER_FILE += libftprintf_struct.h
 
 HEADER = $(HEADER_FILE:%.h=$(HEADER_PATH)/%.h)
 
@@ -42,12 +43,13 @@ LIB = ./libftprintf/libftprintf.a
 
 
 OBJ_PATH = Objects
-OBJECTS = $(addprefix $(OBJ_PATH)/, $(SOURCES:%.c=%.o))
+OBJECTS = $(addprefix $(OBJ_PATH)/, $(SRC:%.c=%.o))
 
 SRC_PATH = Sources
-SRC_SUBDIR += Error
+SRC_SUBDIR += Err
 SRC_SUBDIR += Maths
 SRC_SUBDIR += Memory
+SRC_SUBDIR += Read
 SRC_SUBDIR += Std_lib
 SRC_SUBDIR += String
 SRC_SUBDIR += Write
@@ -58,6 +60,7 @@ vpath %.c $(addprefix $(SRC_PATH)/,$(SRC_SUBDIR))
 
 SRC += ft_atoi.c
 SRC += ft_itoa.c
+SRC += itoa_base.c
 
 # MEMORY
 
@@ -65,16 +68,37 @@ SRC += byte_swap.c
 SRC += ft_bzero.c
 SRC += ft_memalloc.c
 SRC += ft_memchr.c
+SRC += ft_memcmp.c
 SRC += ft_memcpy.c
 SRC += ft_memmove.c
 SRC += ft_memset.c
 
 # STRING
 
+SRC += ft_strcat.c
 SRC += ft_strcmp.c
 SRC += ft_strcpy.c
 SRC += ft_strdup.c
+SRC += ft_strjoin.c
 SRC += ft_strlen.c
+SRC += ft_strmrepl.c
+SRC += ft_strmxlen.c
+SRC += ft_strncmp.c
+SRC += ft_strncpy.c
+SRC += ft_strndup.c
+SRC += ft_strnew.c
+SRC += ft_strnjoin.c
+SRC += ft_strnmchr.c
+SRC += ft_strnocasecmp.c
+SRC += ft_strnocasencmp.c
+SRC += ft_strrepl.c
+SRC += ft_strslen.c
+SRC += ft_strsplit.c
+SRC += ft_strsub.c
+SRC += ft_strtrim.c
+SRC += ft_strxcmp.c
+SRC += ft_strxdup.c
+SRC += ft_strxlen.c
 
 # ERROR
 
@@ -87,17 +111,23 @@ SRC += fctrl.c
 
 # WRITE
 
+SRC += ft_putchar.c
 SRC += ft_putendl.c
+SRC += ft_putnbr.c
 SRC += ft_putstr.c
 
-NORMINETTE_TEST := $(shell norminette $(SRC) $(HEADER) | grep -B 1 Error)
+# READ
+
+SRC += get_next_line.c
+
+NORMINETTE_TEST := $(shell norminette $(SRC_PATH) $(HEADER_PATH) | grep -B 1 Error)
 
 #.SILENT:
 
 all : $(NAME)
 
-$(NAME) : $(OBJECTS) $(HEADER)
-	ar rc $(NAME) $(OBJECTS)
+$(NAME) : $(OBJECTS)
+	ar rc $@ $^
 	ranlib $(NAME)
 
 $(OBJECTS): $(HEADERS) | $(OBJ_PATH)
@@ -120,7 +150,7 @@ norme:
 ifeq ($(NORMINETTE_TEST), )
 	@echo "Everything ok!"
 else
-	@norminette $(SRC) $(HEADERS) | grep -B 1 Error
+	@norminette $(SRC_PATH) $(HEADER_PATH) | grep -B 1 Error
 endif
 
 watch:

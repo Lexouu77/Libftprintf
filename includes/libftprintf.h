@@ -6,12 +6,14 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/09 06:48:29 by ahamouda          #+#    #+#             */
-/*   Updated: 2016/09/11 18:33:55 by ahamouda         ###   ########.fr       */
+/*   Updated: 2016/09/12 15:08:22 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFTPRINTF_H
 # define LIBFTPRINTF_H
+
+# include "libftprintf_struct.h"
 
 # include <stdio.h>
 # include <stdarg.h>
@@ -86,60 +88,80 @@
 ** STD_LIB CONVERSIONS FUNCTIONS
 */
 
-int		ft_atoi(const char *str);
-char	*ft_itoa(int n);
+int			ft_atoi(const char *str);
+char		*ft_itoa(int n);
+char		*itoa_base(void *x, int base, char type);
 
 
 /*
 ** MEMORY FUNCTIONS
 */
 
-void	*byte_swap(void *toswap, size_t size);
-void	ft_bzero(void *s, size_t n);
-void	*ft_memalloc(size_t size);
-void	*ft_memchr(const void *s, int c, size_t n);
-void	*ft_memcpy(void *dest, const void *src, size_t n);
-void	*ft_memmove(void *dest, const void *src, size_t n);
-void	*ft_memset(void *s, int c, size_t n);
+void		*byte_swap(void *toswap, size_t size);
+void		ft_bzero(void *s, size_t n);
+void		*ft_memalloc(size_t size);
+void		*ft_memchr(const void *s, int c, size_t n);
+int			ft_memcmp(const void *s1, const void *s2, size_t n);
+void		*ft_memcpy(void *dest, const void *src, size_t n);
+void		*ft_memmove(void *dest, const void *src, size_t n);
+void		*ft_memset(void *s, int c, size_t n);
 
 /*
 ** STRING FUNCTIONS
 */
 
-int		ft_strcmp(const char *s1, const char *s2);
-char	*ft_strcpy(char *dest, const char *src);
-char	*ft_strdup(const char *s);
-size_t	ft_strlen(const char *s);
+char		*ft_strcat(char *dest, const char *src);
+int			ft_strcmp(const char *s1, const char *s2);
+char		*ft_strcpy(char *dest, const char *src);
+char		*ft_strdup(const char *s);
+char		*ft_strjoin(char const *s1, char const *s2);
+size_t		ft_strlen(const char *s);
+void		ft_strmrepl(char *src, char *to_find, char c);
+size_t		ft_stmrxlen(const char *s, char *c);
+int			ft_strncmp(const char *s1, const char *s2, size_t n);
+char		*ft_strncpy(char *dest, const char *src, size_t n);
+char		*ft_strndup(const char *s, int n);
+char		*ft_strnew(size_t size);
+char		*ft_strnjoin(char const *s1, char const *s2, int n);
+int			ft_strnmchr(char *s, char *to_find, int l);
+int			ft_strnocasecmp(const char *s1, const char *s2);
+int			ft_strnocasencmp(const char *s1, const char *s2, int n);
+void		ft_strrepl(char *src, char to_find, char c);
+size_t		ft_strslen(const char *s, char *to_find);
+char		**ft_strsplit(char const *s, char c);
+char		*ft_strsub(char const *s, unsigned int start, size_t len);
+char		*ft_strtrim(char const *s);
+int			ft_strxcmp(const char *s1, const char *s2, int n);
+char		*ft_strxdup(const char *s, char c);
+size_t		ft_strxlen(const char *s, char c);
 
 /*
 ** ERROR FUNCTIONS
 */
 
-int	leave_error(char *str);
-int	malloc_error(const char *file, int line, const char *function);
+int			leave_error(char *str);
+int			malloc_error(const char *file, int line, const char *function);
 
 /*
 ** MATHS FUNCTIONS
 */
 
-int		fctrl(int nb);
+int			fctrl(int nb);
 
 /*
 ** WRITE FUNCTIONS
 */
 
-void	ft_putendl(char const *s);
-void	ft_putstr(const char *s);
+void		ft_putchar(char c);
+void		ft_putendl(char const *s);
+void		ft_putnbr(int nb);
+void		ft_putstr(const char *s);
 
+/*
+** READ FUNCTIONS
+*/
 
-
-
-
-
-
-
-
-
+int			get_next_line(const int fd, char **line);
 
 
 /*
