@@ -6,7 +6,7 @@
 #    By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/02/27 01:48:43 by ahamouda          #+#    #+#              #
-#    Updated: 2016/09/12 15:08:34 by ahamouda         ###   ########.fr        #
+#    Updated: 2016/09/15 19:11:42 by ahamouda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,8 @@ HEADER_PATH = ./includes
 
 HEADER_FILE = libftprintf.h
 HEADER_FILE += libftprintf_struct.h
+HEADER_FILE += ft_printf.h
+HEADER_FILE += ft_printf_struct.h
 
 HEADER = $(HEADER_FILE:%.h=$(HEADER_PATH)/%.h)
 
@@ -49,6 +51,7 @@ SRC_PATH = Sources
 SRC_SUBDIR += Err
 SRC_SUBDIR += Maths
 SRC_SUBDIR += Memory
+SRC_SUBDIR += Printf
 SRC_SUBDIR += Read
 SRC_SUBDIR += Std_lib
 SRC_SUBDIR += String
@@ -61,6 +64,11 @@ vpath %.c $(addprefix $(SRC_PATH)/,$(SRC_SUBDIR))
 SRC += ft_atoi.c
 SRC += ft_itoa.c
 SRC += itoa_base.c
+
+# PRINTF
+
+SRC += ft_printf.c
+SRC += ft_printf_buffed.c
 
 # MEMORY
 

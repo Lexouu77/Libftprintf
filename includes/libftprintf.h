@@ -6,7 +6,7 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/09 06:48:29 by ahamouda          #+#    #+#             */
-/*   Updated: 2016/09/12 15:08:22 by ahamouda         ###   ########.fr       */
+/*   Updated: 2016/09/15 17:00:23 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFTPRINTF_H
 
 # include "libftprintf_struct.h"
+# include "ft_printf.h"
 
 # include <stdio.h>
 # include <stdarg.h>
