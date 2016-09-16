@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   resize_buffer.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/15 17:05:05 by ahamouda          #+#    #+#             */
-/*   Updated: 2016/09/16 12:45:33 by ahamouda         ###   ########.fr       */
+/*   Created: 2016/09/16 14:21:00 by ahamouda          #+#    #+#             */
+/*   Updated: 2016/09/16 15:58:01 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf(char *format, ...)
+void		resize_buffer(size_t len)
 {
-	int		i;
-	va_list	args;
+	char	*str;
+	size_t	m_len;
 
-	if (!format)
-		return (ft_printf_buffed(1, 1, NULL, NULL));
-	va_start(args, format);
-	i = ft_printf_buffed(1, 1, format, args);
-	va_end(args);
-	return (i);
+	m_len = g_m_len;
+	while (m_len < len + g_m_len)
+		m_len += PRINTF_BUFF_SIZE;
+	g_m_len = m_len;
+	if (!(str = malloc(sizeof(char) * m_len)))
+		MALLOC_ERROR;
+	ft_memcpy(str, g_buffer, g_len);
+	free(g_buffer);
+	g_buffer = str;
 }

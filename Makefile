@@ -6,7 +6,7 @@
 #    By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/02/27 01:48:43 by ahamouda          #+#    #+#              #
-#    Updated: 2016/09/15 19:11:42 by ahamouda         ###   ########.fr        #
+#    Updated: 2016/09/16 15:58:00 by ahamouda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,6 +69,9 @@ SRC += itoa_base.c
 
 SRC += ft_printf.c
 SRC += ft_printf_buffed.c
+SRC += loop_on_str.c
+SRC += malloc_buffer.c
+SRC += resize_buffer.c
 
 # MEMORY
 

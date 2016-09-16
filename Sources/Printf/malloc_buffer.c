@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   malloc_buffer.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/15 17:05:05 by ahamouda          #+#    #+#             */
-/*   Updated: 2016/09/16 12:45:33 by ahamouda         ###   ########.fr       */
+/*   Created: 2016/09/16 13:07:36 by ahamouda          #+#    #+#             */
+/*   Updated: 2016/09/16 14:20:47 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf(char *format, ...)
+void		malloc_buffer(size_t len)
 {
-	int		i;
-	va_list	args;
+	size_t	m_len;
 
-	if (!format)
-		return (ft_printf_buffed(1, 1, NULL, NULL));
-	va_start(args, format);
-	i = ft_printf_buffed(1, 1, format, args);
-	va_end(args);
-	return (i);
+	m_len = 0;
+	while (m_len < len)
+		m_len += PRINTF_BUFF_SIZE;
+	g_m_len = m_len;
+	if (!(g_buffer = malloc(sizeof(char) * m_len)))
+		MALLOC_ERROR;
 }

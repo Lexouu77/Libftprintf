@@ -6,15 +6,12 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/09 06:48:29 by ahamouda          #+#    #+#             */
-/*   Updated: 2016/09/15 17:00:23 by ahamouda         ###   ########.fr       */
+/*   Updated: 2016/09/16 15:58:02 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFTPRINTF_H
 # define LIBFTPRINTF_H
-
-# include "libftprintf_struct.h"
-# include "ft_printf.h"
 
 # include <stdio.h>
 # include <stdarg.h>
@@ -37,6 +34,9 @@
 # include <sys/acl.h>
 # include <termios.h>
 # include <curses.h>
+
+# include "libftprintf_struct.h"
+# include "ft_printf.h"
 
 # define BUFF_SIZE 4096
 
@@ -91,7 +91,7 @@
 
 int			ft_atoi(const char *str);
 char		*ft_itoa(int n);
-char		*itoa_base(void *x, int base, char type);
+char		*itoa_base(void *x, unsigned long base, char type);
 
 
 /*
