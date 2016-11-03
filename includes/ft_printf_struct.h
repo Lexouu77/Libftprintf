@@ -6,7 +6,7 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/15 17:01:49 by ahamouda          #+#    #+#             */
-/*   Updated: 2016/11/03 18:49:47 by ahamouda         ###   ########.fr       */
+/*   Updated: 2016/11/03 20:03:20 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,21 @@
 
 typedef struct	s_printf_flag
 {
-	int			type;
+	int			i;
+	char		type;
+	char		sign;
 	char		sub_specifier[2];
+	char		space;
+	char		zero;
+	char		minus;
+	char		plus;
+	char		hash;
+	char		star;
+	char		dot_star;
+	char		is_precision_here;
+	char		is_min_area_size_here;
+	char		precision[10];
+	char		min_area_size[10];
 }				t_printf_flag;
 
 #endif

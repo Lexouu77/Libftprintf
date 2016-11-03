@@ -6,7 +6,7 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/16 13:00:20 by ahamouda          #+#    #+#             */
-/*   Updated: 2016/11/03 18:51:17 by ahamouda         ###   ########.fr       */
+/*   Updated: 2016/11/03 19:06:12 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static char	*ft_printf_check_flags(char *str, va_list *va, t_printf_flag *flag)
 		if (is_a_valid_type(*str)) // same ^
 			flag->type = *str++;
 		else if (IS_SUBSPE(*str))
-			str = get_sub_specifier(flag, str);
+			str = get_sub_specifier(flag, str); // OK
 		else if (*str == 48 || *str == 32 || *str == 35)
 			str = get_zero_or_space_or_hash(flag, str);
 		else if (*str == 45 || *str == 43)
