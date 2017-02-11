@@ -6,7 +6,7 @@
 #    By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/02/27 01:48:43 by ahamouda          #+#    #+#              #
-#    Updated: 2016/11/03 20:03:22 by ahamouda         ###   ########.fr        #
+#    Updated: 2017/02/11 19:08:54 by ahamouda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,7 @@ SRC_PATH = Sources
 SRC_SUBDIR += Err
 SRC_SUBDIR += Maths
 SRC_SUBDIR += Memory
-SRC_SUBDIR += Printf
+#SRC_SUBDIR += Printf
 SRC_SUBDIR += Read
 SRC_SUBDIR += Std_lib
 SRC_SUBDIR += String
@@ -67,13 +67,13 @@ SRC += itoa_base.c
 
 # PRINTF
 
-SRC += ft_printf.c
-SRC += ft_printf_buffed.c
-SRC += get_printf_flag.c
-SRC += get_sub_specifier.c
-SRC += loop_on_str.c
-SRC += malloc_buffer.c
-SRC += resize_buffer.c
+#SRC += ft_printf.c
+#SRC += ft_printf_buffed.c
+#SRC += get_printf_flag.c
+#SRC += get_sub_specifier.c
+#SRC += loop_on_str.c
+#SRC += malloc_buffer.c
+#SRC += resize_buffer.c
 
 # MEMORY
 
