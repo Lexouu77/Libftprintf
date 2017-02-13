@@ -6,7 +6,7 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/15 17:01:06 by ahamouda          #+#    #+#             */
-/*   Updated: 2016/11/03 20:03:18 by ahamouda         ###   ########.fr       */
+/*   Updated: 2017/02/13 17:55:20 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,6 @@ extern size_t	g_len;
 extern size_t	g_m_len;
 extern char		*g_buffer;
 
-size_t	g_len = 0;
-size_t	g_m_len = 0;
-char	*g_buffer = NULL;
-
 int			ft_printf(char *format, ...);
 int			ft_printf_buffed(int fd, int flush, char *format, va_list vb);
 char		*get_min_area_size(t_printf_flag *flag, char *str);
@@ -53,6 +49,5 @@ char		*get_zero_or_space_or_hash(t_printf_flag *flag, char *str);
 void		loop_on_str(char *str, va_list *va);
 void		malloc_buffer(size_t len);
 void		resize_buffer(size_t len);
-
 
 #endif

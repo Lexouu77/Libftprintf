@@ -6,7 +6,7 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/05 04:43:22 by ahamouda          #+#    #+#             */
-/*   Updated: 2016/09/12 14:38:52 by ahamouda         ###   ########.fr       */
+/*   Updated: 2017/02/13 17:56:34 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static unsigned int	ft_wlen(const char *s, char c)
 	return (len);
 }
 
-char		**ft_strsplit(char const *s, char c)
+char				**ft_strsplit(char const *s, char c)
 {
 	char				**t;
 	unsigned int		nb_word;

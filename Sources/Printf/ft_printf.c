@@ -6,11 +6,15 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/15 17:05:05 by ahamouda          #+#    #+#             */
-/*   Updated: 2016/09/16 12:45:33 by ahamouda         ###   ########.fr       */
+/*   Updated: 2017/02/13 17:55:36 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+size_t	g_len = 0;
+size_t	g_m_len = 0;
+char	*g_buffer = NULL;
 
 int	ft_printf(char *format, ...)
 {

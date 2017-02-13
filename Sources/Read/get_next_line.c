@@ -6,13 +6,13 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/05 04:43:29 by ahamouda          #+#    #+#             */
-/*   Updated: 2016/09/12 15:05:22 by ahamouda         ###   ########.fr       */
+/*   Updated: 2017/02/13 18:04:35 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-static unsigned int	gnl_realloc(char **line, unsigned int n_size)
+static unsigned int		gnl_realloc(char **line, unsigned int n_size)
 {
 	char	*n_line;
 
@@ -23,14 +23,14 @@ static unsigned int	gnl_realloc(char **line, unsigned int n_size)
 		return ('o');
 	}
 	if ((n_line = ((char *)malloc(sizeof(char) * n_size))) == NULL)
-			MALLOC_ERROR;
+		MALLOC_ERROR;
 	ft_memmove(n_line, (*line), n_size - BUFF_SIZE + 1);
 	free(*line);
 	*line = n_line;
 	return ('o');
 }
 
-static t_gnl		*gnl_select_fd(t_gnl **begin, int fd)
+static t_gnl			*gnl_select_fd(t_gnl **begin, int fd)
 {
 	t_gnl	*current_list;
 	char	esc;
@@ -58,7 +58,7 @@ static t_gnl		*gnl_select_fd(t_gnl **begin, int fd)
 	return (current_list);
 }
 
-static void			gnl_free_fd(t_gnl **begin, int fd)
+static void				gnl_free_fd(t_gnl **begin, int fd)
 {
 	t_gnl	*current_list;
 	t_gnl	*to_free_list;
@@ -117,7 +117,7 @@ static unsigned int		gnl_rx(t_gnl *current_fd, char **line, unsigned int *i,
 	return ('L');
 }
 
-int					get_next_line(const int fd, char **line)
+int						get_next_line(const int fd, char **line)
 {
 	unsigned int	i;
 	unsigned int	ret_rx;
