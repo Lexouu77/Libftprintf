@@ -6,12 +6,12 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/16 13:00:20 by ahamouda          #+#    #+#             */
-/*   Updated: 2016/11/03 19:06:12 by ahamouda         ###   ########.fr       */
+/*   Updated: 2017/02/13 20:50:26 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
+/*
 static char	*ft_printf_check_flags(char *str, va_list *va, t_printf_flag *flag)
 {
 	while (is_a_good_flag_or_type(str) && !flag->type) // change it later
@@ -39,7 +39,7 @@ static char	*ft_printf_check_flags(char *str, va_list *va, t_printf_flag *flag)
 		flag->type = (flag->type) ? flag->type : *str++;
 	return (str);
 }
-
+*//*
 static char	*copy_var_to_buffer(char *s, va_list *va)
 {
 	t_printf_flag	flag;
@@ -50,7 +50,7 @@ static char	*copy_var_to_buffer(char *s, va_list *va)
 		display_final(&flag, va, list);
 	return (str);
 }
-
+*/
 static char	*copy_str_to_buffer(char *s, size_t len) // a metttre en fonction dans un autre fichier.
 {
 	size_t	i;
@@ -63,19 +63,20 @@ static char	*copy_str_to_buffer(char *s, size_t len) // a metttre en fonction da
 	while (i < len)
 	{
 		g_buffer[g_len + i] = s[i];
-		g_len++;
 		i++;
 	}
+	g_len += i;
 	return (s + i);
 }
 
 void		loop_on_str(char *str, va_list *va)
 {
+	(void)va;
 	while (*str)
 	{
-		if (*str == '%')
-			str = copy_var_to_buffer(++str, va);
-		else
+	//	if (*str == '%')
+	//		str = copy_var_to_buffer(++str, va);
+	//	else
 			str = copy_str_to_buffer(str, ft_strxlen(str, '%'));
 	}
 }

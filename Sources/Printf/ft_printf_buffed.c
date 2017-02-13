@@ -6,7 +6,7 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/05 05:55:00 by ahamouda          #+#    #+#             */
-/*   Updated: 2016/09/16 14:42:26 by ahamouda         ###   ########.fr       */
+/*   Updated: 2017/02/13 20:50:20 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,3 +48,16 @@ int			ft_printf_buffed(int fd, int flush, char *format, va_list vb)
 //	TODO : Faire une structure un peu plus decente. et malloc de PRINTF_BUFF_SIZE
 // si c'est trop petit, Faire un while pour calculer combien de plus il faut malloc, et ensuite save l'old size et faire un malloc avec la newsize puis copier l'ancienne size. et commencer a ecrire a partir de oldsize
 
+
+int			ft_printf_hidden(char *format, ...)
+{
+	int		i;
+	va_list	args;
+
+	if (!format)
+		return (ft_printf_buffed(1, 0, NULL, NULL));
+	va_start(args, format);
+	i = ft_printf_buffed(1, 0, format, args);
+	va_end(args);
+	return (i);
+}

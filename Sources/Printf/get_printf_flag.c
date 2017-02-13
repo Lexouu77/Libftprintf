@@ -6,12 +6,12 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/13 18:02:14 by ahamouda          #+#    #+#             */
-/*   Updated: 2017/02/13 18:02:16 by ahamouda         ###   ########.fr       */
+/*   Updated: 2017/02/13 18:39:15 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
+/*
 char		*get_zero_or_space_or_hash(t_printf_flag *flag, char *str)
 {
 	if (*str == 32)
@@ -75,4 +75,4 @@ char		*get_min_area_size(t_printf_flag *flag, char *str)
 	flag->nb_min_char = ft_atoi(flag->min_area_size);
 	flag->is_min_area_size_here = 1;
 	return (str);
-}
+}*/

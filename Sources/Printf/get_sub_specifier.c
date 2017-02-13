@@ -6,7 +6,7 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/05 04:43:31 by ahamouda          #+#    #+#             */
-/*   Updated: 2016/11/03 18:51:14 by ahamouda         ###   ########.fr       */
+/*   Updated: 2017/02/13 18:40:06 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ static	int		check_max(t_printf_flag *flag, int len2)
 {
 	int	len;
 
+	len = 0;
 	if (flag->sub_specifier[0] == 104 && flag->sub_specifier[1] == 104)
 		len = 1;
 	if (flag->sub_specifier[0] == 104)
@@ -62,6 +63,7 @@ static	int		get_max(t_printf_flag *flag, char *str)
 {
 	int	len;
 
+	len = 0;
 	if (*str == 104 && *(str + 1) == 104)
 		len = 1;
 	if (*str == 104)

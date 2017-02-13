@@ -6,7 +6,7 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/15 17:01:06 by ahamouda          #+#    #+#             */
-/*   Updated: 2017/02/13 17:55:20 by ahamouda         ###   ########.fr       */
+/*   Updated: 2017/02/13 20:47:46 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ extern size_t	g_m_len;
 extern char		*g_buffer;
 
 int			ft_printf(char *format, ...);
+int			ft_printf_hidden(char *format, ...);
 int			ft_printf_buffed(int fd, int flush, char *format, va_list vb);
 char		*get_min_area_size(t_printf_flag *flag, char *str);
 char		*get_operator(t_printf_flag *flag, char *str);
