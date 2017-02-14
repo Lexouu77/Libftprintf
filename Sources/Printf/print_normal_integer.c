@@ -6,7 +6,7 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/05 04:43:36 by ahamouda          #+#    #+#             */
-/*   Updated: 2017/02/14 07:47:14 by ahamouda         ###   ########.fr       */
+/*   Updated: 2017/02/14 12:52:34 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void			print_normal_integer(va_list *va, t_printf_flag *flag)
 		flag->converted_number = itoa_base((void*)c_x, 16, flag->type);
 	if (flag->type == 'o' || flag->type == 'O')
 		flag->converted_number = itoa_base((void*)c_x, 8, flag->type);
-	get_nb_min_char(flag, flag->converted_number);//
+	get_nb_min_char(flag, flag->converted_number);
 	flag->i = -1;
 	if (flag->minus)
 		print_with_minus(flag);

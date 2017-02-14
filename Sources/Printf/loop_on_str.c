@@ -6,7 +6,7 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/16 13:00:20 by ahamouda          #+#    #+#             */
-/*   Updated: 2017/02/14 11:40:18 by ahamouda         ###   ########.fr       */
+/*   Updated: 2017/02/14 12:52:17 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ static char	*copy_var_to_buffer(char *s, va_list *va)
 		MALLOC_ERROR;
 	s = ft_printf_check_flags(s, va, flag);
 	if (flag->type)
-		display_final(flag, va); //
+		display_final(flag, va);
 	free(flag);
 	return (s);
 }

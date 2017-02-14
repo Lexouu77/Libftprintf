@@ -6,7 +6,7 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/05 04:43:28 by ahamouda          #+#    #+#             */
-/*   Updated: 2017/02/14 11:40:19 by ahamouda         ###   ########.fr       */
+/*   Updated: 2017/02/14 12:52:01 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ char		*get_ansi_code(t_printf_flag *flag, char *str)
 		if (*str == ',')
 			str++;
 		else if (!ft_strncmp("FG_", str, 3))
-			str = apply_fg(str +3);
+			str = apply_fg(str + 3);
 		else if (!ft_strncmp("BG_", str, 3))
 			str = apply_bg(str + 3);
 		else if (!ft_strncmp("SP_", str, 3))

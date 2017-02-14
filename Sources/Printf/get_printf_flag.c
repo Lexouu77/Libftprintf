@@ -6,7 +6,7 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/13 18:02:14 by ahamouda          #+#    #+#             */
-/*   Updated: 2017/02/14 04:15:42 by ahamouda         ###   ########.fr       */
+/*   Updated: 2017/02/14 12:51:31 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ char		*get_precision(t_printf_flag *flag, char *str)
 		return (str);
 	}
 	flag->is_precision_here = 1;
-	//reset_precision(flag);
 	ft_bzero(flag->precision, 10);
 	if (!FT_ISDIGIT(*str))
 	{
@@ -68,7 +67,6 @@ char		*get_min_area_size(t_printf_flag *flag, char *str)
 			++str;
 		return (str);
 	}
-	//reset_min_area_size(flag);
 	ft_bzero(flag->min_area_size, 10);
 	flag->i = -1;
 	--str;

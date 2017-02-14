@@ -6,7 +6,7 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/05 04:43:30 by ahamouda          #+#    #+#             */
-/*   Updated: 2017/02/14 07:31:20 by ahamouda         ###   ########.fr       */
+/*   Updated: 2017/02/14 12:51:39 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void			*get_sign(void *x, t_printf_flag *flag)
 	const long long		c = (long long)x;
 	unsigned long long	i_c;
 
-	i_c = (unsigned long long)-c; // not sure about the cast
+	i_c = (unsigned long long)-c;
 	if (c < 0)
 		flag->sign = '-';
 	else

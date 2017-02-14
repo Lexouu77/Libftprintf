@@ -6,7 +6,7 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/09 06:48:29 by ahamouda          #+#    #+#             */
-/*   Updated: 2017/02/14 11:40:16 by ahamouda         ###   ########.fr       */
+/*   Updated: 2017/02/14 12:55:55 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@
 # define FT_TOLOWER(c) ((FT_ISUPPER(c)) ? ((c) | 0x20) : (c))
 # define FT_ISXDIGIT(c) (FT_ISDIGIT(c) || ((unsigned)(c) | 0x20) - 'a' < 6U)
 
-# define MALLOC_ERROR malloc_error(__FILE__, __LINE__, __FUNCTION__)
+# define MALLOC_ERROR malloc_error(__FILE__, __FUNCTION__)
 
 /*
 ** STD_LIB CONVERSIONS FUNCTIONS

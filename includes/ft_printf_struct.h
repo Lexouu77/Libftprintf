@@ -6,7 +6,7 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/15 17:01:49 by ahamouda          #+#    #+#             */
-/*   Updated: 2017/02/14 09:17:57 by ahamouda         ###   ########.fr       */
+/*   Updated: 2017/02/14 12:53:03 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,6 @@ typedef struct		s_printf_flag
 	char			is_min_area_size_here;
 	char			is_precision_here;
 	char			sub_specifier[2];
-//	t_fg_color		fg_color;
-//	t_bg_color		bg_color;
-//	t_special		special;
 	char			reset_fg;
 	char			reset_ansi;
 	char			reset_bg;
