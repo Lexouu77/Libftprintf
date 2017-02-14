@@ -6,7 +6,7 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/05 04:42:44 by ahamouda          #+#    #+#             */
-/*   Updated: 2017/02/14 05:24:55 by ahamouda         ###   ########.fr       */
+/*   Updated: 2017/02/14 08:39:53 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,30 +22,26 @@ void		display_alpha_var(t_printf_flag *flag, va_list *va)
 		print_normal_string(va, flag);
 	if (flag->type == 'C')
 		print_unicode_char(va, flag);
-//	if (flag->type == 'S')
-//		print_unicode_string(va, flag);
+	if (flag->type == 'S')
+		print_unicode_string(va, flag);
 }
 
 void		display_spe_var(t_printf_flag *flag, va_list *va)
 {
-	(void)va;
-	(void)flag;
-/*	if (flag->type == 'n')
+	if (flag->type == 'n')
 		stock_n(va, flag);
 	else if (flag->type == 'p')
 		print_pointer(flag, va);
 	else if (flag->type == 'B' || flag->type == 'b')
 		print_binary(flag, va);
 	else if (flag->type == 'v')
-		print_str_tab(va);
+		print_str_tab(va, flag);
 	else if (flag->type == 'V')
-		print_int_tab(va);*/
+		print_int_tab(va, flag);
 }
 
 void		display_numeric_var(t_printf_flag *flag, va_list *va)
 {
-	(void)va;
-	(void)flag;
-//	if (IS_NUMT(flag->type))
-//		print_normal_integer(va, flag);
+	if (IS_NUMT(flag->type))
+		print_normal_integer(va, flag);
 }

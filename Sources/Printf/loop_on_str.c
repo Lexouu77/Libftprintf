@@ -6,7 +6,7 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/16 13:00:20 by ahamouda          #+#    #+#             */
-/*   Updated: 2017/02/14 04:51:29 by ahamouda         ###   ########.fr       */
+/*   Updated: 2017/02/14 07:26:24 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,13 +69,14 @@ static void	display_final(t_printf_flag *flag, va_list *va)
 
 static char	*copy_var_to_buffer(char *s, va_list *va)
 {
-	t_printf_flag	flag;
+	t_printf_flag	*flag;
 
-//	flag = ft_bzero(&flag, sizeof(t_printf_flag));
-	ft_bzero(&flag, sizeof(t_printf_flag));
-	s = ft_printf_check_flags(s, va, &flag);
-	if (flag.type)
-		display_final(&flag, va); //
+	if (!(flag = ft_memalloc(sizeof(t_printf_flag))))
+		MALLOC_ERROR;
+	s = ft_printf_check_flags(s, va, flag);
+	if (flag->type)
+		display_final(flag, va); //
+	free(flag);
 	return (s);
 }
 

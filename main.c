@@ -4,8 +4,8 @@
 
 int main(void)
 {
-	ft_printf_hidden("lel test 1\n");
-	printf("\nreturn : %d\n", ft_printf("COUCOU\n"));
-	ft_printf("END!");
+
+//	printf("\nreturn : %d\n", ft_printf("%d\n", 1));
+	ft_printf("%d\n", -1);
 	return 0;
 }

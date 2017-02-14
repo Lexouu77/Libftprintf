@@ -6,7 +6,7 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/15 17:01:06 by ahamouda          #+#    #+#             */
-/*   Updated: 2017/02/14 04:57:06 by ahamouda         ###   ########.fr       */
+/*   Updated: 2017/02/14 08:40:34 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,10 @@ extern size_t	g_len;
 extern size_t	g_m_len;
 extern char		*g_buffer;
 
+void		*cast_normal_integer(t_printf_flag *flag, void *x);
 void		copy_char_to_buffer(char c);
 char		*copy_str_to_buffer(char *s, size_t len);
+void		copy_unicode_char_to_buffer(int c);
 void		display_alpha_var(t_printf_flag *flag, va_list *va);
 void		display_numeric_var(t_printf_flag *flag, va_list *va);
 void		display_spe_var(t_printf_flag *flag, va_list *va);
@@ -53,16 +55,27 @@ int			ft_printf_hidden(char *format, ...);
 int			ft_printf_buffed(int fd, int flush, char *format, va_list vb);
 char		*get_dot_star(t_printf_flag *flag, char *str, va_list *va);
 char		*get_min_area_size(t_printf_flag *flag, char *str);
+void		get_nb_min_char(t_printf_flag *flag, char *str);
 char		*get_operator(t_printf_flag *flag, char *str);
 char		*get_precision(t_printf_flag *flag, char *str);
+void		*get_sign(void *x, t_printf_flag *flag);
 char		*get_star(t_printf_flag *flag, char *str, va_list *va);
 char		*get_sub_specifier(t_printf_flag *flag, char *str);
+int			get_unicode_len(int c);
 char		*get_zero_or_space_or_hash(t_printf_flag *flag, char *str);
 void		loop_on_str(char *str, va_list *va);
 void		malloc_buffer(size_t len);
+void		print_binary(t_printf_flag *flag, va_list *va);
 void		print_char(t_printf_flag *flag);
+void		print_int_tab(va_list *va, t_printf_flag *flag);
 void		print_normal_char(va_list *va, t_printf_flag *flag);
+void		print_normal_integer(va_list *va, t_printf_flag *flag);
 void		print_normal_string(va_list *va, t_printf_flag *flag);
+void		print_pointer(t_printf_flag *flag, va_list *va);
+void		print_str_tab(va_list *va, t_printf_flag *flag);
+void		print_unicode_char(va_list *va, t_printf_flag *flag);
+void		print_unicode_string(va_list *va, t_printf_flag *flag);
 void		resize_buffer(size_t len);
+void		stock_n(va_list *va, t_printf_flag *flag);
 
 #endif

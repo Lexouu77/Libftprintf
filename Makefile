@@ -6,7 +6,7 @@
 #    By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/02/27 01:48:43 by ahamouda          #+#    #+#              #
-#    Updated: 2017/02/14 05:11:24 by ahamouda         ###   ########.fr        #
+#    Updated: 2017/02/14 08:43:51 by ahamouda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,20 +67,30 @@ SRC += itoa_base.c
 
 # PRINTF
 
+SRC += cast_normal_integer.c
 SRC += copy_str_to_buffer.c
 SRC += display_var.c
 SRC += ft_printf.c
 SRC += ft_printf_buffed.c
+SRC += get_nb_min_char.c
 SRC += get_printf_flag.c
 SRC += get_printf_spe_flag.c
+SRC += get_sign.c
 SRC += get_sub_specifier.c
 SRC += loop_on_str.c
 SRC += malloc_buffer.c
+SRC += print_binary.c
 SRC += print_char.c
+SRC += print_int_tab.c
 SRC += print_normal_char.c
+SRC += print_normal_integer.c
 SRC += print_normal_string.c
+SRC += print_pointer.c
+SRC += print_str_tab.c
 SRC += print_unicode_char.c
+SRC += print_unicode_string.c
 SRC += resize_buffer.c
+SRC += stock_n.c
 
 # MEMORY
 
@@ -176,7 +186,7 @@ endif
 watch:
 	watch "make norme" "20"
 
-test:
+test: all
 	$(CC) main.c -L . -lftprintf
 	./a.out
 

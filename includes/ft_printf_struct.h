@@ -6,7 +6,7 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/15 17:01:49 by ahamouda          #+#    #+#             */
-/*   Updated: 2017/02/13 18:38:55 by ahamouda         ###   ########.fr       */
+/*   Updated: 2017/02/14 06:33:35 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ typedef struct		s_printf_flag
 	char			padding_byte;
 	int				padding_bytes;
 	char			*converted_number;
-	char			*tmp_conv_nb;
+//	char			*tmp_conv_nb;
 }					t_printf_flag;
 
 
