@@ -5,7 +5,7 @@
 int main(void)
 {
 
-//	printf("\nreturn : %d\n", ft_printf("%d\n", 1));
-	ft_printf("%d\n", -1);
+	ft_printf("TEST%[[BG_CSM224,SP_RST]s\n", "colors");
+	ft_printf("TEST%[[FG_RED,SP_RST]s\n", "colors");
 	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/09 06:48:29 by ahamouda          #+#    #+#             */
-/*   Updated: 2017/02/14 09:04:49 by ahamouda         ###   ########.fr       */
+/*   Updated: 2017/02/14 11:40:16 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@
 # define ANSI_FG_MAGENTA	"\x1b[35m"
 # define ANSI_FG_CYAN		"\x1b[36m"
 # define ANSI_FG_WHITE		"\x1b[37m"
+# define ANSI_FG_CUSTOM		"\x1b[38;5;"
 
 # define ANSI_FG_STANDART	"\x1b[39m"
 
@@ -62,6 +63,7 @@
 # define ANSI_BG_MAGENTA	"\x1b[45m"
 # define ANSI_BG_CYAN		"\x1b[46m"
 # define ANSI_BG_WHITE		"\x1b[47m"
+# define ANSI_BG_CUSTOM		"\x1b[48;5;"
 
 # define ANSI_BG_STANDART	"\x1b[40m"
 

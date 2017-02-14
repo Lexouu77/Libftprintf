@@ -6,7 +6,7 @@
 #    By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/02/27 01:48:43 by ahamouda          #+#    #+#              #
-#    Updated: 2017/02/14 09:03:27 by ahamouda         ###   ########.fr        #
+#    Updated: 2017/02/14 11:40:15 by ahamouda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,12 +22,9 @@ RM = rm -f
 
 CFLAGS = -Wall -Werror -Wextra
 
-
 SFLAGS = -Weverything
 
 OFLAGS = -O3 -march=native
-
-CFLAGS += $(OFLAGS)
 
 DFLAGS = -g3 -fsanitize=address
 
@@ -75,6 +72,7 @@ SRC += copy_str_to_buffer.c
 SRC += display_var.c
 SRC += ft_printf.c
 SRC += ft_printf_buffed.c
+SRC += get_ansi_code.c
 SRC += get_nb_min_char.c
 SRC += get_printf_flag.c
 SRC += get_printf_spe_flag.c

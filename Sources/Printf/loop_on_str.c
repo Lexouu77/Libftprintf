@@ -6,7 +6,7 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/16 13:00:20 by ahamouda          #+#    #+#             */
-/*   Updated: 2017/02/14 07:26:24 by ahamouda         ###   ########.fr       */
+/*   Updated: 2017/02/14 11:40:18 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ static char	*ft_printf_check_flags(char *str, va_list *va, t_printf_flag *flag)
 			str = get_precision(flag, ++str);
 		else if (FT_ISDIGIT(*str))
 			str = get_min_area_size(flag, str);
-//		else if (*str == 91 && str[1] == 91)
-//			str = get_ansi_code(flag, ++str, list); // change it. to get custom color
+		else if (*str == 91 && str[1] == 91)
+			str = get_ansi_code(flag, ++str);
 	}
 	if (*str)
 		flag->type = (flag->type) ? flag->type : *str++;
@@ -52,6 +52,7 @@ static char	*ft_printf_check_flags(char *str, va_list *va, t_printf_flag *flag)
 
 static void	display_final(t_printf_flag *flag, va_list *va)
 {
+	printf("TYPE = %c\n", flag->type);
 	if (IS_VALIDT(flag->type))
 	{
 		if (IS_SPET(flag->type))
@@ -63,8 +64,12 @@ static void	display_final(t_printf_flag *flag, va_list *va)
 	}
 	else
 		print_char(flag);
-//	if (flag->reset_ansi || flag->reset_bg || flag->reset_fg)
-//		apply_spe_after(flag); //
+	if (flag->reset_ansi)
+		STB(ANSI_RESET, 4);
+	if (flag->reset_fg)
+		STB(ANSI_FG_STANDART, 5);
+	if (flag->reset_bg)
+		STB(ANSI_BG_STANDART, 5);
 }
 
 static char	*copy_var_to_buffer(char *s, va_list *va)

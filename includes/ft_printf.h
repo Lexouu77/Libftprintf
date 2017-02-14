@@ -6,7 +6,7 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/15 17:01:06 by ahamouda          #+#    #+#             */
-/*   Updated: 2017/02/14 09:04:05 by ahamouda         ###   ########.fr       */
+/*   Updated: 2017/02/14 11:40:21 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void		display_spe_var(t_printf_flag *flag, va_list *va);
 int			ft_printf(char *format, ...);
 int			ft_printf_hidden(char *format, ...);
 int			ft_printf_buffed(int fd, int flush, char *format, va_list vb);
+char		*get_ansi_code(t_printf_flag *flag, char *str);
 char		*get_dot_star(t_printf_flag *flag, char *str, va_list *va);
 char		*get_min_area_size(t_printf_flag *flag, char *str);
 void		get_nb_min_char(t_printf_flag *flag, char *str);
