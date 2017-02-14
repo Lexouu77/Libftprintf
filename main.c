@@ -9,8 +9,3 @@ int main(void)
 	ft_printf("END!");
 	return 0;
 }
-
-
-
-
-

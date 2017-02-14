@@ -6,12 +6,12 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/13 18:02:14 by ahamouda          #+#    #+#             */
-/*   Updated: 2017/02/13 18:39:15 by ahamouda         ###   ########.fr       */
+/*   Updated: 2017/02/14 03:54:25 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-/*
+
 char		*get_zero_or_space_or_hash(t_printf_flag *flag, char *str)
 {
 	if (*str == 32)
@@ -45,7 +45,8 @@ char		*get_precision(t_printf_flag *flag, char *str)
 		return (str);
 	}
 	flag->is_precision_here = 1;
-	reset_precision(flag);
+	//reset_precision(flag);
+	ft_bzero(flag->precision, 10);
 	if (!FT_ISDIGIT(*str))
 	{
 		flag->nb_max_char = 0;
@@ -67,7 +68,8 @@ char		*get_min_area_size(t_printf_flag *flag, char *str)
 			++str;
 		return (str);
 	}
-	reset_min_area_size(flag);
+	//reset_min_area_size(flag);
+	ft_bzero(flag->min_area_size, 10);
 	flag->i = -1;
 	--str;
 	while (FT_ISDIGIT(*++str))
@@ -75,4 +77,4 @@ char		*get_min_area_size(t_printf_flag *flag, char *str)
 	flag->nb_min_char = ft_atoi(flag->min_area_size);
 	flag->is_min_area_size_here = 1;
 	return (str);
-}*/
+}

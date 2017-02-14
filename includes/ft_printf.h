@@ -6,7 +6,7 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/15 17:01:06 by ahamouda          #+#    #+#             */
-/*   Updated: 2017/02/13 20:47:46 by ahamouda         ###   ########.fr       */
+/*   Updated: 2017/02/14 03:48:12 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@
 # define IS_APLHAC(c) ((c) == 'c' || (c) == 'C' || (c) == 's' || (c) == 'S')
 # define IS_APLHAT(c) (IS_APLHAC(c) || (c) == '%')
 
-# define IS_SPET(c) ((c) == 'n' || (c) == 'p')
+# define IS_SPEC(c) ((c) == 'V' || (c) == 'v' || (c) == 'B')
+# define IS_SPET(c) ((c) == 'n' || (c) == 'p' || (c) == 'b' || IS_SPEC(c))
 
 # define IS_NUMA(c) ((c) == 'd' || (c) == 'D' || (c) == 'i' || (c) == 'u')
 # define IS_NUMB(c) ((c) == 'U' || (c) == 'x' || (c) == 'X' || (c) == 'O')
@@ -33,18 +34,21 @@
 # define IS_SUBSPEB(c) ((c) == 'L' || (c) == 't')
 # define IS_SUBSPE(c) (IS_SUBSPEA(c) || IS_SUBSPEB(c))
 
-# define IS_VALIDC(c) (IS_VALIDT(c) || FT_ISDIGIT(c) ||)
+# define IS_VALIDC(c) (IS_VALIDT(c) || FT_ISDIGIT(c) || IS_SUBSPE(c))
 
 extern size_t	g_len;
 extern size_t	g_m_len;
 extern char		*g_buffer;
 
+char		*copy_str_to_buffer(char *s, size_t len);
 int			ft_printf(char *format, ...);
 int			ft_printf_hidden(char *format, ...);
 int			ft_printf_buffed(int fd, int flush, char *format, va_list vb);
+char		*get_dot_star(t_printf_flag *flag, char *str, va_list *va);
 char		*get_min_area_size(t_printf_flag *flag, char *str);
 char		*get_operator(t_printf_flag *flag, char *str);
 char		*get_precision(t_printf_flag *flag, char *str);
+char		*get_star(t_printf_flag *flag, char *str, va_list *va);
 char		*get_sub_specifier(t_printf_flag *flag, char *str);
 char		*get_zero_or_space_or_hash(t_printf_flag *flag, char *str);
 void		loop_on_str(char *str, va_list *va);

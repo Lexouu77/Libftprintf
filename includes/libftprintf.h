@@ -6,7 +6,7 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/09 06:48:29 by ahamouda          #+#    #+#             */
-/*   Updated: 2017/02/13 18:47:00 by ahamouda         ###   ########.fr       */
+/*   Updated: 2017/02/14 03:24:48 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,6 @@
 
 # define ANSI_BG_STANDART	"\x1b[40m"
 
-
 # define FT_ISASCII(c) (((c) & 0x80) == 0)
 # define FT_ISBLANK(c) ((c) == ' ' || (c) == '\t')
 # define FT_ISWHITESPACE(c) (FT_ISBLANK(c) || ((c) == '\n'))
@@ -92,7 +91,6 @@
 int			ft_atoi(const char *str);
 char		*ft_itoa(int n);
 char		*itoa_base(void *x, unsigned long base, char type);
-
 
 /*
 ** MEMORY FUNCTIONS
@@ -163,7 +161,6 @@ void		ft_putstr(const char *s);
 */
 
 int			get_next_line(const int fd, char **line);
-
 
 /*
 typedef	enum		e_fg_color
