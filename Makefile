@@ -6,7 +6,7 @@
 #    By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/02/27 01:48:43 by ahamouda          #+#    #+#              #
-#    Updated: 2017/02/14 03:46:47 by ahamouda         ###   ########.fr        #
+#    Updated: 2017/02/14 05:11:24 by ahamouda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,6 +67,8 @@ SRC += itoa_base.c
 
 # PRINTF
 
+SRC += copy_str_to_buffer.c
+SRC += display_var.c
 SRC += ft_printf.c
 SRC += ft_printf_buffed.c
 SRC += get_printf_flag.c
@@ -74,6 +76,10 @@ SRC += get_printf_spe_flag.c
 SRC += get_sub_specifier.c
 SRC += loop_on_str.c
 SRC += malloc_buffer.c
+SRC += print_char.c
+SRC += print_normal_char.c
+SRC += print_normal_string.c
+SRC += print_unicode_char.c
 SRC += resize_buffer.c
 
 # MEMORY
