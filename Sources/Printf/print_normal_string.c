@@ -6,7 +6,7 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/05 04:43:38 by ahamouda          #+#    #+#             */
-/*   Updated: 2017/02/14 05:11:32 by ahamouda         ###   ########.fr       */
+/*   Updated: 2017/02/14 09:03:49 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,11 @@ void			print_normal_string(va_list *va, t_printf_flag *flag)
 	void		*x;
 	int			len;
 
-//	if (flag->sub_specifier[0] == 'l' && !flag->sub_specifier[1])
-//		return (print_unicode_string(va, flag, list));
+	if (flag->sub_specifier[0] == 'l' && !flag->sub_specifier[1])
+	{
+		print_unicode_string(va, flag);
+		return ;
+	}
 	x = va_arg(*va, void*);
 	if (!x)
 		x = "(null)";
