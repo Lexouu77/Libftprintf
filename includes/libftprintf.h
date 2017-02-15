@@ -141,7 +141,7 @@ size_t		ft_strxlen(const char *s, char c);
 */
 
 int			leave_error(char *str);
-int			malloc_error(const char *file, int line, const char *function);
+int			malloc_error(const char *file, const char *function);
 
 /*
 ** MATHS FUNCTIONS
