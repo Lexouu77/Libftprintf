@@ -6,7 +6,7 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/05 04:43:38 by ahamouda          #+#    #+#             */
-/*   Updated: 2017/02/14 08:43:56 by ahamouda         ###   ########.fr       */
+/*   Updated: 2017/02/15 17:16:11 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static	int		get_u_len(int *x)
 	i = -1;
 	len = 0;
 	while (x[++i])
-		len += get_unicode_len(*x);
+		len += get_unicode_len(x[i]);
 	return (len);
 }
 
@@ -80,8 +80,10 @@ void			print_unicode_string(va_list *va, t_printf_flag *flag)
 
 	flag->i = -1;
 	x = va_arg(*va, void*);
+	if (flag->minus)
+		flag->zero = 0;
 	if (x == NULL)
-		STB("(null)", 6);
+		STB("(null)", 6); //  do something to call it with print_normal_string use it as arg i guess
 	else
 	{
 		len = get_nb_max_char_unicode_s(flag, (int*)x);

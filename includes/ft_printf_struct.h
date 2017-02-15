@@ -6,7 +6,7 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/15 17:01:49 by ahamouda          #+#    #+#             */
-/*   Updated: 2017/02/14 12:53:03 by ahamouda         ###   ########.fr       */
+/*   Updated: 2017/02/15 17:17:06 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ typedef struct		s_printf_flag
 	int				nb_max_char;
 	int				hash;
 	int				i;
-	int				nb_c_written;
 	int				nb_min_char;
 	int				plus;
 	int				minus;
@@ -37,7 +36,6 @@ typedef struct		s_printf_flag
 	char			star;
 	char			dot_star;
 	char			padding_byte;
-	int				padding_bytes;
 	char			*converted_number;
 }					t_printf_flag;
 
