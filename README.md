@@ -7,7 +7,7 @@
 %[[FLAGS]c :
 `[FG|BG]_[RED|BLU|GRN|YEL|MAG|CYA|WHI|CSM]`
 
-`[Foreground|Background]_[Red|Blue|Green|Yellow|Magenta|Cyan|White]`
+`[Foreground|Background]_[Red|Blue|Green|Yellow|Magenta|Cyan|White|Custom]`
 
 CSM e.g. `%[[FG_CSM$VAL]` $VAL from 0 to 255
 
