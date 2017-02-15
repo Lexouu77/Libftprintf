@@ -6,7 +6,7 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/16 13:00:20 by ahamouda          #+#    #+#             */
-/*   Updated: 2017/02/14 12:52:17 by ahamouda         ###   ########.fr       */
+/*   Updated: 2017/02/15 11:39:37 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ static char	*ft_printf_check_flags(char *str, va_list *va, t_printf_flag *flag)
 
 static void	display_final(t_printf_flag *flag, va_list *va)
 {
-	printf("TYPE = %c\n", flag->type);
 	if (IS_VALIDT(flag->type))
 	{
 		if (IS_SPET(flag->type))
