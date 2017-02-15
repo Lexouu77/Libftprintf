@@ -6,7 +6,7 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/15 17:01:06 by ahamouda          #+#    #+#             */
-/*   Updated: 2017/02/14 11:40:21 by ahamouda         ###   ########.fr       */
+/*   Updated: 2017/02/15 20:02:02 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void		print_char(t_printf_flag *flag);
 void		print_int_tab(va_list *va, t_printf_flag *flag);
 void		print_normal_char(va_list *va, t_printf_flag *flag);
 void		print_normal_integer(va_list *va, t_printf_flag *flag);
-void		print_normal_string(va_list *va, t_printf_flag *flag);
+void		print_normal_string(va_list *va, t_printf_flag *flag, int null_str);
 void		print_pointer(t_printf_flag *flag, va_list *va);
 void		print_str_tab(va_list *va, t_printf_flag *flag);
 void		print_unicode_char(va_list *va, t_printf_flag *flag);

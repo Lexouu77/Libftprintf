@@ -6,7 +6,7 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/05 04:42:44 by ahamouda          #+#    #+#             */
-/*   Updated: 2017/02/14 09:03:55 by ahamouda         ###   ########.fr       */
+/*   Updated: 2017/02/15 20:01:59 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void		display_alpha_var(t_printf_flag *flag, va_list *va)
 	if (flag->type == '%')
 		print_char(flag);
 	if (flag->type == 's')
-		print_normal_string(va, flag);
+		print_normal_string(va, flag, 0);
 	if (flag->type == 'C')
 		print_unicode_char(va, flag);
 	if (flag->type == 'S')

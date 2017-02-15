@@ -6,7 +6,7 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/05 04:43:38 by ahamouda          #+#    #+#             */
-/*   Updated: 2017/02/15 17:16:11 by ahamouda         ###   ########.fr       */
+/*   Updated: 2017/02/15 20:01:55 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,11 @@ void			print_unicode_string(va_list *va, t_printf_flag *flag)
 	if (flag->minus)
 		flag->zero = 0;
 	if (x == NULL)
-		STB("(null)", 6); //  do something to call it with print_normal_string use it as arg i guess
+	{
+		flag->sub_specifier[0] = 0;
+		print_normal_string(va, flag, 1);
+		return ;
+	}
 	else
 	{
 		len = get_nb_max_char_unicode_s(flag, (int*)x);

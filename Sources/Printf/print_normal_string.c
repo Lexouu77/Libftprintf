@@ -6,7 +6,7 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/05 04:43:38 by ahamouda          #+#    #+#             */
-/*   Updated: 2017/02/14 09:03:49 by ahamouda         ###   ########.fr       */
+/*   Updated: 2017/02/15 20:01:57 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,8 @@ static	int		get_nb_min_char_string(t_printf_flag *flag, char *str)
 	return (len2);
 }
 
-void			print_normal_string(va_list *va, t_printf_flag *flag)
+void			print_normal_string(va_list *va, t_printf_flag *flag,
+		int null_str)
 {
 	void		*x;
 	int			len;
@@ -55,7 +56,7 @@ void			print_normal_string(va_list *va, t_printf_flag *flag)
 		print_unicode_string(va, flag);
 		return ;
 	}
-	x = va_arg(*va, void*);
+	x = (null_str) ? NULL : va_arg(*va, void*);
 	if (!x)
 		x = "(null)";
 	flag->i = -1;
