@@ -6,7 +6,7 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/05 04:43:12 by ahamouda          #+#    #+#             */
-/*   Updated: 2017/02/23 13:37:40 by ahamouda         ###   ########.fr       */
+/*   Updated: 2017/02/23 13:41:35 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strjoinsep(const char *s1, const char *s2, char sep)
 {
-	char	*ns;
-	const	size_t len = ft_strlen(s1);
+	char			*ns;
+	const	size_t	len = ft_strlen(s1);
 
 	if (s1 && s2)
 	{
