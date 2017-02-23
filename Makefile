@@ -6,7 +6,7 @@
 #    By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/02/27 01:48:43 by ahamouda          #+#    #+#              #
-#    Updated: 2017/02/15 17:17:36 by ahamouda         ###   ########.fr        #
+#    Updated: 2017/02/23 13:25:37 by ahamouda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -111,6 +111,7 @@ SRC += ft_strcmp.c
 SRC += ft_strcpy.c
 SRC += ft_strdup.c
 SRC += ft_strjoin.c
+SRC += ft_strjoinsep.c
 SRC += ft_strlen.c
 SRC += ft_strmrepl.c
 SRC += ft_strmxlen.c

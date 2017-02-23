@@ -6,7 +6,7 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/09 06:48:29 by ahamouda          #+#    #+#             */
-/*   Updated: 2017/02/14 12:55:55 by ahamouda         ###   ########.fr       */
+/*   Updated: 2017/02/23 13:29:58 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,6 +116,7 @@ int			ft_strcmp(const char *s1, const char *s2);
 char		*ft_strcpy(char *dest, const char *src);
 char		*ft_strdup(const char *s);
 char		*ft_strjoin(char const *s1, char const *s2);
+char		*ft_strjoinsep(const char *s1, const char *s2, char sep);
 size_t		ft_strlen(const char *s);
 void		ft_strmrepl(char *src, char *to_find, char c);
 size_t		ft_stmrxlen(const char *s, char *c);
