@@ -6,7 +6,7 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/05 04:43:29 by ahamouda          #+#    #+#             */
-/*   Updated: 2017/02/13 18:16:50 by ahamouda         ###   ########.fr       */
+/*   Updated: 2017/02/28 18:17:02 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,6 +138,8 @@ int						get_next_line(const int fd, char **line)
 		if ((ret_rx = gnl_rx(current_fd, line, &i, ret_rx)) == 'e')
 			return (-1);
 	}
+	if (!fd)
+		gnl_free_fd(&begin, fd);
 	if (ret_rx == 'L')
 		return (1);
 	gnl_free_fd(&begin, fd);
