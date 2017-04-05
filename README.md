@@ -1,5 +1,7 @@
 # Libftprintf
 
+## Lib with some functions from Cstdlib and others ! Also printf.
+
 [![Build Status](https://travis-ci.org/Lexouu77/Libftprintf.svg?branch=master)](https://travis-ci.org/Lexouu77/Libftprintf)
 
 ### Printf:
