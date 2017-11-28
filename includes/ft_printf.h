@@ -6,7 +6,7 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/15 17:01:06 by ahamouda          #+#    #+#             */
-/*   Updated: 2017/11/28 18:03:54 by ahamouda         ###   ########.fr       */
+/*   Updated: 2017/11/28 18:34:01 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,9 @@ void		display_numeric_var(t_printf_flag *flag, va_list *va);
 void		display_spe_var(t_printf_flag *flag, va_list *va);
 int			ft_printf(char *format, ...);
 int			ft_printf_fd(int fd, char *format, ...);
+/*
+**void		ft_printf_flush(void)__attribute__ ((destructor));
+*/
 int			ft_printf_hidden(char *format, ...);
 int			ft_printf_buffed(int fd, int flush, char *format, va_list vb);
 char		*get_ansi_code(t_printf_flag *flag, char *str);
