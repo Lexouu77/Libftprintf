@@ -6,7 +6,7 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/13 21:06:50 by ahamouda          #+#    #+#             */
-/*   Updated: 2017/02/15 17:04:13 by ahamouda         ###   ########.fr       */
+/*   Updated: 2017/11/28 18:02:27 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@ static int	instant_flush(int fd)
 {
 	size_t		i;
 
-	if (!g_len)
+	if (!g_ftprintf_len)
 		return (0);
-	i = g_len;
-	write(fd, g_buffer, g_len);
-	g_len = 0;
-	g_m_len = 0;
-	free(g_buffer);
-	g_buffer = NULL;
+	i = g_ftprintf_len;
+	write(fd, g_ftprintf_buffer, g_ftprintf_len);
+	g_ftprintf_len = 0;
+	g_ftprintf_m_len = 0;
+	free(g_ftprintf_buffer);
+	g_ftprintf_buffer = NULL;
 	return ((int)i);
 }
 

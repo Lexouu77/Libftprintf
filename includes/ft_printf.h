@@ -6,7 +6,7 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/15 17:01:06 by ahamouda          #+#    #+#             */
-/*   Updated: 2017/02/28 17:10:19 by ahamouda         ###   ########.fr       */
+/*   Updated: 2017/11/28 18:03:54 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@
 # define CTB(x) copy_char_to_buffer(x)
 # define STB(x, y) copy_str_to_buffer(x, y)
 
-extern size_t	g_len;
-extern size_t	g_m_len;
-extern char		*g_buffer;
+extern size_t	g_ftprintf_len;
+extern size_t	g_ftprintf_m_len;
+extern char		*g_ftprintf_buffer;
 
 void		*cast_normal_integer(t_printf_flag *flag, void *x);
 void		copy_char_to_buffer(char c);
