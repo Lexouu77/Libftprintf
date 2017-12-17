@@ -6,24 +6,22 @@
 /*   By: ahamouda <ahamouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/13 21:06:50 by ahamouda          #+#    #+#             */
-/*   Updated: 2017/11/28 18:34:00 by ahamouda         ###   ########.fr       */
+/*   Updated: 2017/12/17 16:03:38 by ahamouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-/*
-**void		ft_printf_flush(void)
-**{
-**	if (!g_ftprintf_len)
-**		return ;
-**	write(0, g_ftprintf_buffer, g_ftprintf_len);
-**	g_ftprintf_len = 0;
-**	g_ftprintf_m_len = 0;
-**	free(g_ftprintf_buffer);
-**	g_ftprintf_buffer = NULL;
-**}
-*/
+void		ft_printf_flush(void)
+{
+	if (!g_ftprintf_len)
+		return ;
+	write(0, g_ftprintf_buffer, g_ftprintf_len);
+	g_ftprintf_len = 0;
+	g_ftprintf_m_len = 0;
+	free(g_ftprintf_buffer);
+	g_ftprintf_buffer = NULL;
+}
 
 static int	instant_flush(int fd)
 {
